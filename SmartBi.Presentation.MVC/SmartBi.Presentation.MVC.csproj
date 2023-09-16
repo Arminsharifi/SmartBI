@@ -6,4 +6,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartBI.Application\SmartBI.Application.csproj" />
+    <ProjectReference Include="..\SmartBI.DAL.EfCore\SmartBI.DAL.EfCore.csproj" />
+    <ProjectReference Include="..\SmartBI.DAL.PowerBI\SmartBI.DAL.PowerBI.csproj" />
+    <ProjectReference Include="..\SmartBI.Domain\SmartBI.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

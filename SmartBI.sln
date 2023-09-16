@@ -3,29 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.Domain", "SmartBI.Domain\SmartBI.Domain.csproj", "{E43FF463-0861-47EB-9E43-D942AC94618C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.Domain", "SmartBI.Domain\SmartBI.Domain.csproj", "{E43FF463-0861-47EB-9E43-D942AC94618C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.DAL.EfCore", "SmartBI.DAL.EfCore\SmartBI.DAL.EfCore.csproj", "{52BAB293-90CB-4A83-846C-FBF8B458666B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.DAL.EfCore", "SmartBI.DAL.EfCore\SmartBI.DAL.EfCore.csproj", "{52BAB293-90CB-4A83-846C-FBF8B458666B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.Application", "SmartBI.Application\SmartBI.Application.csproj", "{97B4B9C6-DA66-45BA-8149-B81A80BEC7EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.Application", "SmartBI.Application\SmartBI.Application.csproj", "{97B4B9C6-DA66-45BA-8149-B81A80BEC7EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBi.Presentation.MVC", "SmartBi.Presentation.MVC\SmartBi.Presentation.MVC.csproj", "{905215AF-7D78-4404-91D7-5DD790FAE832}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBi.Presentation.MVC", "SmartBi.Presentation.MVC\SmartBi.Presentation.MVC.csproj", "{905215AF-7D78-4404-91D7-5DD790FAE832}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmartBI", "SmartBI", "{C81D820A-02C0-4A9A-9E7E-5E5070195B1F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmartBI.AuthService", "SmartBI.AuthService", "{9CBCD5A1-A224-40DE-A191-C984AAAE2391}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.DAL.PowerBI", "SmartBI.DAL.PowerBI\SmartBI.DAL.PowerBI.csproj", "{28AE3711-8EBC-4C71-8E5E-780E845B8715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.DAL.PowerBI", "SmartBI.DAL.PowerBI\SmartBI.DAL.PowerBI.csproj", "{28AE3711-8EBC-4C71-8E5E-780E845B8715}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.AuthService.Domain", "SmartBI.AuthService.Domain\SmartBI.AuthService.Domain.csproj", "{8B6C0369-A120-4B6F-915E-86B5D8EB3B27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.AuthService.Domain", "SmartBI.AuthService.Domain\SmartBI.AuthService.Domain.csproj", "{8B6C0369-A120-4B6F-915E-86B5D8EB3B27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.AuthService.DAL.EfCore", "SmartBI.AuthService.DAL.EfCore\SmartBI.AuthService.DAL.EfCore.csproj", "{13ADF1D1-D996-4F19-9768-C29BAE2D262C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.AuthService.DAL.EfCore", "SmartBI.AuthService.DAL.EfCore\SmartBI.AuthService.DAL.EfCore.csproj", "{13ADF1D1-D996-4F19-9768-C29BAE2D262C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.AuthService.Application", "SmartBI.AuthService.Application\SmartBI.AuthService.Application.csproj", "{23BDED59-A183-45B6-8659-7608EF4F3001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.AuthService.Application", "SmartBI.AuthService.Application\SmartBI.AuthService.Application.csproj", "{23BDED59-A183-45B6-8659-7608EF4F3001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.AuthService.Tools", "SmartBI.AuthService.Tools\SmartBI.AuthService.Tools.csproj", "{0CAFC1A9-35F3-4B48-8150-B995119D5BA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.AuthService.Tools", "SmartBI.AuthService.Tools\SmartBI.AuthService.Tools.csproj", "{0CAFC1A9-35F3-4B48-8150-B995119D5BA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.AuthService.Presentation.API", "SmartBI.AuthService.Presentation.API\SmartBI.AuthService.Presentation.API.csproj", "{167C0778-9E17-43C7-9235-10ED68CFAB61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBI.AuthService.Presentation.API", "SmartBI.AuthService.Presentation.API\SmartBI.AuthService.Presentation.API.csproj", "{167C0778-9E17-43C7-9235-10ED68CFAB61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmartBI.Shared", "SmartBI.Shared", "{DFAB555B-FD7A-4376-B3FD-CB820752FB26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.Shareds", "SmartBI.Shareds\SmartBI.Shareds.csproj", "{FF6F2A20-7D84-4117-BB65-EFCE348C1302}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,10 @@ Global
 		{167C0778-9E17-43C7-9235-10ED68CFAB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{167C0778-9E17-43C7-9235-10ED68CFAB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{167C0778-9E17-43C7-9235-10ED68CFAB61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF6F2A20-7D84-4117-BB65-EFCE348C1302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6F2A20-7D84-4117-BB65-EFCE348C1302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6F2A20-7D84-4117-BB65-EFCE348C1302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6F2A20-7D84-4117-BB65-EFCE348C1302}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +96,7 @@ Global
 		{23BDED59-A183-45B6-8659-7608EF4F3001} = {9CBCD5A1-A224-40DE-A191-C984AAAE2391}
 		{0CAFC1A9-35F3-4B48-8150-B995119D5BA7} = {9CBCD5A1-A224-40DE-A191-C984AAAE2391}
 		{167C0778-9E17-43C7-9235-10ED68CFAB61} = {9CBCD5A1-A224-40DE-A191-C984AAAE2391}
+		{FF6F2A20-7D84-4117-BB65-EFCE348C1302} = {DFAB555B-FD7A-4376-B3FD-CB820752FB26}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D362682-2321-43C0-A343-3036F14FC81B}
