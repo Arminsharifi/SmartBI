@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SmartBI.AuthService.DAL.EfCore\SmartBI.AuthService.DAL.EfCore.csproj" />
+    <ProjectReference Include="..\SmartBI.AuthService.Domain\SmartBI.AuthService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

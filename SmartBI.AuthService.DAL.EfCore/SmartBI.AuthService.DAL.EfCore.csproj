@@ -16,10 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartBI.AuthService.Domain\SmartBI.AuthService.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\SmartBI.AuthService.Tools\SmartBI.AuthService.Tools.csproj" />
   </ItemGroup>
 
 </Project>
