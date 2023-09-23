@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using SmartBI.AuthService.Application.Interfaces;
+using SmartBI.AuthService.Domain.Commands;
 using SmartBI.AuthService.Domain.Entities;
 using SmartBI.AuthService.Domain.Queries;
 using SmartBI.Shareds.DataTransferObjects;
@@ -46,6 +45,20 @@ namespace SmartBI.AuthService.Presentation.API.Controllers
             {
                 return Unauthorized();
             }
+        }
+
+        [HttpPost("SignUp")]
+        public async Task<IActionResult> SignUp([FromBody] SignUpUserCommand signUpUserCommand)
+        {
+            try
+            {
+                await _userServices.SignUp(signUpUserCommand);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }  
         }
     }
 }

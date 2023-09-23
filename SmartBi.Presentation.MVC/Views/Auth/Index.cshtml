@@ -1,0 +1,60 @@
+﻿@model LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa" data-bs-theme="dark" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیستم رزرواسیون گلچین رسانه هوشمند</title>
+    <link rel="icon" type="image/png" href="~/images/favicon.png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/loginpage.css">
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css">
+    <script src="~/lib/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    @if (ViewBag.Error is not null)
+                    {
+                        <input type="hidden" value="@ViewBag.Error" id="ErrorForSwal">
+
+                        <script>
+                            var Error = document.getElementById('ErrorForSwal').value;
+                            console.log(Error);
+                            swal("خطا", Error, "error");
+                        </script>
+                    }
+                    <div class="card-header text-center">
+                        <h3 class="mb-3" style="color: #BEFF00">سیستم گزارش گیری اسمارت ایکس</h3>
+                        <br />
+                        <img src="~/images/Smart.svg" alt="SmartXLogo" class="logo mb-3" />
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Login" asp-action="Index" method="post">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" asp-for="UserName" placeholder="نام کاربری" dir="rtl" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" asp-for="Password" placeholder="رمز عبور" dir="rtl" required>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block form-control">ورود</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.js" type="text/javascript" asp-append-version="true"></script>
+</body>
+</html>

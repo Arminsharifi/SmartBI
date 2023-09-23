@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../webfonts/Vazirmatn[wght].woff2') format('woff2 supports variations'), 
+        url('../webfonts/Vazirmatn[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    background-image: url("../images/LoginBackGround.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Vazirmatn;
+    font-weight: 400;
+}
+h1 {
+    font-weight: 900;
+}
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 150px;
+}

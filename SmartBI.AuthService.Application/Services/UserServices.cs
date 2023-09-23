@@ -22,7 +22,7 @@ namespace SmartBI.AuthService.Application.Services
             User user = new User
             {
                 Name = signUpUserCommand.Name,
-                UserName = signUpUserCommand.UserName,
+                UserName = signUpUserCommand.UserName.ToLower(),
                 Password = Security.HashSha256WithSalt(signUpUserCommand.Password, Salt),
                 Salt = Salt
             };
@@ -31,7 +31,7 @@ namespace SmartBI.AuthService.Application.Services
 
         public async Task<User?> SignIn(SignInUserQuery signInUserQuery)
         {
-            User? user = await _userRepository.GetUser(signInUserQuery.UserName);
+            User? user = await _userRepository.GetUser(signInUserQuery.UserName.ToLower());
             if (user is not null)
             {
                 if (string.Equals(user.Password, Security.HashSha256WithSalt(signInUserQuery.Password, user.Salt)))

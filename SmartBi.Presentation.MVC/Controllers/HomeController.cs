@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartBi.Presentation.MVC.Models;
 using SmartBI.DAL.EfCore.Contexts;
-using SmartBI.Domain.Entities;
 using System.Diagnostics;
 using System.Security.Cryptography;
 
 namespace SmartBi.Presentation.MVC.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -21,7 +22,7 @@ namespace SmartBi.Presentation.MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            await AddSomeBusiness();
+            //await AddSomeBusiness();
             return View();
         }
 
