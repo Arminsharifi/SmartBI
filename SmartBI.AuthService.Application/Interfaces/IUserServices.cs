@@ -1,6 +1,7 @@
 ﻿using SmartBI.AuthService.Domain.Commands;
 using SmartBI.AuthService.Domain.Entities;
 using SmartBI.AuthService.Domain.Queries;
+using SmartBI.Shareds.DataTransferObjects;
 
 namespace SmartBI.AuthService.Application.Interfaces
 {
@@ -8,5 +9,6 @@ namespace SmartBI.AuthService.Application.Interfaces
     {
         Task<User?> SignIn(SignInUserQuery signInUserQuery);
         Task SignUp(SignUpUserCommand signUpUserCommand);
+        Task<UserDto?> Get(string UserName);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using SmartBI.AuthService.Application.Interfaces;
 using SmartBI.AuthService.Domain.Commands;
@@ -13,6 +14,7 @@ namespace SmartBI.AuthService.Presentation.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class AuthController : ControllerBase
     {
         private readonly IUserServices _userServices;
@@ -58,7 +60,7 @@ namespace SmartBI.AuthService.Presentation.API.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
-            }  
+            }
         }
     }
 }

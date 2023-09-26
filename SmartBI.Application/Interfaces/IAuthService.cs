@@ -4,6 +4,6 @@ namespace SmartBI.Application.Interfaces
 {
     public interface IAuthService
     {
-        Task<JwtDto> Authenticate(string UserName, string Password);
+        Task<JwtDto?> AuthenticateAsync(string UserName, string Password);
     }
 }

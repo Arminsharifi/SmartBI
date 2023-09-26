@@ -21,9 +21,9 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card mt-5">
-                    @if (ViewBag.Error is not null)
+                    @if (TempData["Error"] is not null)
                     {
-                        <input type="hidden" value="@ViewBag.Error" id="ErrorForSwal">
+                        <input type="hidden" value="@TempData["Error"]" id="ErrorForSwal">
 
                         <script>
                             var Error = document.getElementById('ErrorForSwal').value;
@@ -37,7 +37,7 @@
                         <img src="~/images/Smart.svg" alt="SmartXLogo" class="logo mb-3" />
                     </div>
                     <div class="card-body">
-                        <form asp-controller="Login" asp-action="Index" method="post">
+                        <form asp-controller="Auth" asp-action="Authenticate" method="post">
                             <div class="mb-3">
                                 <input type="text" class="form-control" asp-for="UserName" placeholder="نام کاربری" dir="rtl" required>
                             </div>

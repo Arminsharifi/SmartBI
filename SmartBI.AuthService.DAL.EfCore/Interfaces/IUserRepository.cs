@@ -4,8 +4,8 @@ namespace SmartBI.AuthService.DAL.EfCore.Interfaces
 {
     public interface IUserRepository
     {
-        Task CreateUser(User user);
-        Task<User?> GetUser(int id);
-        Task<User?> GetUser(string userName);
+        Task Create(User user);
+        Task<User?> Get(int id);
+        Task<User?> Get(string userName);
     }
 }

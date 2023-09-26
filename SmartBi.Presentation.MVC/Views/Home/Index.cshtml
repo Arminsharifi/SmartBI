@@ -1,8 +1,25 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<div class="container text-center">
+    <h3 class="mb-3">سرویس کوتاه کننده لینک وزیر</h3>
+    <p class="mb-3">
+        سرعت بسیار بالا و به صورت کاملا رایگان
+    </p>
+</div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container" style="max-width: 55%">
+    <div class="card text-center">
+        <div class="card-body">
+            <p class="card-text">
+                کوتاه کردن آدرس های اینترنتی شما
+            </p>
+            <form asp-controller="Home" asp-action="CreateUrl" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
+                    <input type="text" class="form-control" id="Url" name="Url" placeholder="https://" dir="ltr" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="submit" class="btn btn-primary" value="کوتاه کن" style="width: 50%" />
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

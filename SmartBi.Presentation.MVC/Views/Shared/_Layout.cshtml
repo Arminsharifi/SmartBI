@@ -1,49 +1,72 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa" data-bs-theme="auto" dir="rtl">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SmartBi.Presentation.MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SmartBi.Presentation.MVC.styles.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/css/layout.style.css" rel="stylesheet" />
+    <link rel="icon" href="~/images/favicon.png" type="image/svg+xml">
+    <title>سیستم گزارش گیری اسمارت ایکس</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SmartBi.Presentation.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://smartx.ir">
+                <img src="~/images/Smart.svg" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
+                سیستم گزارش گیری اسمارت ایکس
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">صفحه اصلی</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - SmartBi.Presentation.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <button id="theme-toggle" class="btn btn-outline-link bi bi-moon-stars-fill"></button>
         </div>
+    </nav>
+    <br />
+    @RenderBody()
+    <footer class="footer fixed-bottom d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary ms-5">کاری از آرمین شریفی</p>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script>
+        function setThemeBasedOnDevice() {
+            const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const htmlTag = document.getElementsByTagName("html")[0];
+            const themeToggleBtn = document.getElementById("theme-toggle");
+
+            if (prefersDarkTheme) {
+                htmlTag.setAttribute("data-bs-theme", "dark");
+                themeToggleBtn.classList.remove("bi-moon-stars");
+                themeToggleBtn.classList.add("bi-moon-stars-fill");
+            } else {
+                htmlTag.setAttribute("data-bs-theme", "light");
+                themeToggleBtn.classList.remove("bi-moon-stars-fill");
+                themeToggleBtn.classList.add("bi-moon-stars");
+            }
+        }
+
+        function toggleTheme() {
+            const htmlTag = document.getElementsByTagName("html")[0];
+            const currentTheme = htmlTag.getAttribute("data-bs-theme");
+            const themeToggleBtn = document.getElementById("theme-toggle");
+
+            if (currentTheme === "dark") {
+                htmlTag.setAttribute("data-bs-theme", "light");
+                themeToggleBtn.classList.remove("bi-moon-stars-fill");
+                themeToggleBtn.classList.add("bi-moon-stars");
+            } else if (currentTheme === "light") {
+                htmlTag.setAttribute("data-bs-theme", "dark");
+                themeToggleBtn.classList.remove("bi-moon-stars");
+                themeToggleBtn.classList.add("bi-moon-stars-fill");
+            }
+        }
+        const toggleButton = document.getElementById("theme-toggle");
+        toggleButton.addEventListener("click", toggleTheme);
+        setThemeBasedOnDevice();
+    </script>
 </body>
 </html>
