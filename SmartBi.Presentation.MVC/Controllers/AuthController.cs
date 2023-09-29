@@ -48,21 +48,22 @@ namespace SmartBi.Presentation.MVC.Controllers
                 ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 AuthenticationProperties properties = new AuthenticationProperties() { AllowRefresh = true };
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), properties);
-                if (HttpContext.User.Identity.IsAuthenticated)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    TempData["Error"] = "Authentication failed.";
-                    return RedirectToAction("Index", "Auth");
-                }
+                HttpContext.Session.Clear();
+                HttpContext.Session.SetString("BearerToken", jwtDto.Token);
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 TempData["Error"] = "نام کاربری یا رمز عبور اشتباه است";
                 return RedirectToAction("Index", "Auth");
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SigningOut()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index");
         }
     }
 }

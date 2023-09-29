@@ -6,19 +6,25 @@ using SmartBI.DAL.EfCore.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDistributedMemoryCache();
+
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromHours(12);
+    options.IdleTimeout = TimeSpan.FromHours(3);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
 });
-builder.Services.AddDbContext<SmartDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SmartBI")));
-builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(option =>
-    {
-        option.LoginPath = "/Login/Index";
-        option.ExpireTimeSpan = TimeSpan.FromHours(12);
-    });
+.AddCookie(option =>
+{
+    option.LoginPath = "/Auth/Index";
+    option.ExpireTimeSpan = TimeSpan.FromHours(3);
+});
+
+builder.Services.AddDbContext<SmartDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SmartBI")));
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
@@ -31,8 +37,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
-app.UseRouting();
 app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(

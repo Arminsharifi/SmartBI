@@ -15,7 +15,6 @@ namespace SmartBi.Presentation.MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            //await AddSomeBusiness();
             return View();
         }
     }
